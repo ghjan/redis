@@ -1,6 +1,9 @@
 #!/bin/sh
 set -e
 
+makedir -p /var/log/redis/
+chown redis:redis /data/db/redis
+
 # first arg is `-f` or `--some-option`
 # or first arg is `something.conf`
 if [ "${1#-}" != "$1" ] || [ "${1%.conf}" != "$1" ]; then
